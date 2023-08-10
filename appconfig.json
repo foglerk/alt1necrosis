@@ -3,7 +3,7 @@
 	"description": "Tracks the Necrosis buff",
 	"appUrl":"./",
 	"configUrl":"./appconfig.json",
-	"iconUrl": "./necrosis.data.png",
+	"iconUrl": "images/necrosis.data.png",
 	"defaultWidth": 100,
 	"defaultHeight": 100,
 	"minWidth": 0,
