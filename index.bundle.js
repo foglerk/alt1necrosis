@@ -2402,9 +2402,9 @@ class BuffInfo {
 
 /***/ }),
 
-/***/ "./images/bolg.data.png":
+/***/ "./images/necrosis.data.png":
 /*!******************************!*\
-  !*** ./images/bolg.data.png ***!
+  !*** ./images/necrosis.data.png ***!
   \******************************/
 /***/ ((module, __unused_webpack_exports, __webpack_require__) => {
 
@@ -2412,9 +2412,9 @@ module.exports=(__webpack_require__(/*! @alt1/base */ "../node_modules/@alt1/bas
 
 /***/ }),
 
-/***/ "./images/bolg_empty.data.png":
+/***/ "./images/necrosis_empty.data.png":
 /*!************************************!*\
-  !*** ./images/bolg_empty.data.png ***!
+  !*** ./images/necrosis_empty.data.png ***!
   \************************************/
 /***/ ((module, __unused_webpack_exports, __webpack_require__) => {
 
@@ -2422,9 +2422,9 @@ module.exports=(__webpack_require__(/*! @alt1/base */ "../node_modules/@alt1/bas
 
 /***/ }),
 
-/***/ "./images/bolg_large.data.png":
+/***/ "./images/necrosis_large.data.png":
 /*!************************************!*\
-  !*** ./images/bolg_large.data.png ***!
+  !*** ./images/necrosis_large.data.png ***!
   \************************************/
 /***/ ((module, __unused_webpack_exports, __webpack_require__) => {
 
@@ -2432,9 +2432,9 @@ module.exports=(__webpack_require__(/*! @alt1/base */ "../node_modules/@alt1/bas
 
 /***/ }),
 
-/***/ "./images/bolg_medium.data.png":
+/***/ "./images/necrosis_medium.data.png":
 /*!*************************************!*\
-  !*** ./images/bolg_medium.data.png ***!
+  !*** ./images/necrosis_medium.data.png ***!
   \*************************************/
 /***/ ((module, __unused_webpack_exports, __webpack_require__) => {
 
@@ -2442,9 +2442,9 @@ module.exports=(__webpack_require__(/*! @alt1/base */ "../node_modules/@alt1/bas
 
 /***/ }),
 
-/***/ "./images/bolg_small.data.png":
+/***/ "./images/necrosis_small.data.png":
 /*!************************************!*\
-  !*** ./images/bolg_small.data.png ***!
+  !*** ./images/necrosis_small.data.png ***!
   \************************************/
 /***/ ((module, __unused_webpack_exports, __webpack_require__) => {
 
@@ -5384,31 +5384,31 @@ let font = __webpack_require__(/*! @alt1/ocr/fonts/pixel_digits_8px_shadow.js */
 __webpack_require__(/*! !file-loader?name=[name].[ext]!./index.html */ "../node_modules/file-loader/dist/cjs.js?name=[name].[ext]!./index.html");
 __webpack_require__(/*! !file-loader?name=[name].[ext]!./appconfig.json */ "../node_modules/file-loader/dist/cjs.js?name=[name].[ext]!./appconfig.json");
 let imgs = _alt1_base__WEBPACK_IMPORTED_MODULE_0__.ImageDetect.webpackImages({
-    "bolg": __webpack_require__(/*! ./images/bolg.data.png */ "./images/bolg.data.png"),
-    "bolg_empty": __webpack_require__(/*! ./images/bolg_empty.data.png */ "./images/bolg_empty.data.png"),
-    "bolg_small": __webpack_require__(/*! ./images/bolg_small.data.png */ "./images/bolg_small.data.png"),
-    "bolg_medium": __webpack_require__(/*! ./images/bolg_medium.data.png */ "./images/bolg_medium.data.png"),
-    "bolg_large": __webpack_require__(/*! ./images/bolg_large.data.png */ "./images/bolg_large.data.png"),
+    "necrosis": __webpack_require__(/*! ./images/necrosis.data.png */ "./images/necrosis.data.png"),
+    "necrosis_empty": __webpack_require__(/*! ./images/necrosis_empty.data.png */ "./images/necrosis_empty.data.png"),
+    "necrosis_small": __webpack_require__(/*! ./images/necrosis_small.data.png */ "./images/necrosis_small.data.png"),
+    "necrosis_medium": __webpack_require__(/*! ./images/necrosis_medium.data.png */ "./images/necrosis_medium.data.png"),
+    "necrosis_large": __webpack_require__(/*! ./images/necrosis_large.data.png */ "./images/necrosis_large.data.png"),
 });
-// Search for bolg buff by using images. This is a slow method but does support medium and large buffs.
-let buff_sizes = ["bolg_small", "bolg_medium", "bolg_large"];
+// Search for necrosis buff by using images. This is a slow method but does support medium and large buffs.
+let buff_sizes = ["necrosis_small", "necrosis_medium", "necrosis_large"];
 function readBuffsByImage() {
     let canvas = document.getElementById("canvas");
     let ctx = canvas.getContext("2d");
     // Clear the canvas and draw the empty buff icon
-    ctx.drawImage(imgs.bolg_empty.toImage(), 0, 0, canvas.width, canvas.height);
+    ctx.drawImage(imgs.necrosis_empty.toImage(), 0, 0, canvas.width, canvas.height);
     let img = _alt1_base__WEBPACK_IMPORTED_MODULE_0__.captureHoldFullRs();
     let sizes = {
-        "bolg_small": 27,
-        "bolg_medium": 32,
-        "bolg_large": 36
+        "necrosis_small": 27,
+        "necrosis_medium": 32,
+        "necrosis_large": 36
     };
     // Look for the current phase
     for (let key in buff_sizes) {
         let name = buff_sizes[key];
         let img_found = img.findSubimage(imgs[name]);
         if (img_found.length > 0) {
-            // At zamorak there is a mechanic with the same icon, the last one is always bolg.
+            // At zamorak there is a mechanic with the same icon, the last one is always necrosis.
             let last_item = img_found.length - 1;
             let size = sizes[name];
             let buff = _alt1_base__WEBPACK_IMPORTED_MODULE_0__.capture(img_found[last_item].x, img_found[last_item].y, size, size);
@@ -5435,11 +5435,11 @@ function readBuffs() {
     let canvas = document.getElementById("canvas");
     let ctx = canvas.getContext("2d");
     // Clear the canvas and draw the empty buff icon
-    ctx.drawImage(imgs.bolg_empty.toImage(), 0, 0, canvas.width, canvas.height);
-    // At zamorak there is a mechanic with the same icon, the last one is always bolg
+    ctx.drawImage(imgs.necrosis_empty.toImage(), 0, 0, canvas.width, canvas.height);
+    // At zamorak there is a mechanic with the same icon, the last one is always necrosis
     // Reverse the order of the buffs so that the last one is the one we want.
     for (const a in opts.reverse()) {
-        if (opts[a].compareBuffer(imgs.bolg)) {
+        if (opts[a].compareBuffer(imgs.necrosis)) {
             let img = opts[a].buffer.toImage();
             // drawImage(image, sx, sy, sWidth, sHeight, dx, dy, dWidth, dHeight);        
             ctx.drawImage(img, opts[a].bufferx, opts[a].buffery, 27, 27, 0, 0, canvas.width, canvas.height);
@@ -5449,14 +5449,14 @@ function readBuffs() {
 }
 document.getElementById("canvas").onclick = function () {
     // Toggle the image search setting
-    if (localStorage["bolg_search"] == "true") {
-        localStorage["bolg_search"] = "false";
+    if (localStorage["necrosis_search"] == "true") {
+        localStorage["necrosis_search"] = "false";
     }
     else {
-        localStorage["bolg_search"] = "true";
+        localStorage["necrosis_search"] = "true";
     }
-    console.log("Using image search: " + localStorage["bolg_search"]);
-    alt1.setTooltip("Using image search: " + localStorage["bolg_search"]);
+    console.log("Using image search: " + localStorage["necrosis_search"]);
+    alt1.setTooltip("Using image search: " + localStorage["necrosis_search"]);
     // Reload the window to apply changes
     setTimeout(function () {
         window.location.reload();
@@ -5465,7 +5465,7 @@ document.getElementById("canvas").onclick = function () {
 // check if we are running inside alt1 by checking if the alt1 global exists
 if (window.alt1) {
     alt1.identifyAppUrl("./appconfig.json");
-    if (localStorage["bolg_search"] == "true") {
+    if (localStorage["necrosis_search"] == "true") {
         setInterval(function () {
             readBuffsByImage();
         }, 100);
@@ -5484,9 +5484,9 @@ if (window.alt1) {
             }
         }, 1000);
     }
-    if (!localStorage["bolg_search"]) {
+    if (!localStorage["necrosis_search"]) {
         // Do not use the inefficient method that supports multiple sizes by default
-        localStorage["bolg_search"] = "false";
+        localStorage["necrosis_search"] = "false";
     }
 }
 
